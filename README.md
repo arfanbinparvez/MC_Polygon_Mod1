@@ -24,20 +24,20 @@ INFURA_PROJECT_ID=your-infura-project-id
 Generate and Upload Images
 ## Deployment and Management
 1. Generate 5 unique images using DALLE 2 or Midjourney.
-     --Upload the images to Pinata and note down the IPFS CIDs.
-     --Create Metadata
+--Upload the images to Pinata and note down the IPFS CIDs.
+--Create Metadata
 
-2. Create a JSON metadata file for each NFT with the IPFS link to the image and prompt description.
-    --Upload these JSON files to Pinata and record their IPFS CIDs.
-     --Deploy the Contract
+3. Create a JSON metadata file for each NFT with the IPFS link to the image and prompt description.
+--Upload these JSON files to Pinata and record their IPFS CIDs.
+--Deploy the Contract
 
-3. Modify the scripts/deploy.js file to include the base URI from Pinata.
-      --Deploy the MetaNFT contract to the Sepolia network.
-      --Batch Mint NFTs
+5. Modify the scripts/deploy.js file to include the base URI from Pinata.
+--Deploy the MetaNFT contract to the Sepolia network.
+--Batch Mint NFTs
 
-4. Edit scripts/mint.js to specify the number of NFTs to mint.
-    --Execute the minting script to create the NFTs in bulk.
-    --Batch Transfer NFTs
+6. Edit scripts/mint.js to specify the number of NFTs to mint.
+--Execute the minting script to create the NFTs in bulk.
+--Batch Transfer NFTs
 
 # Adjust scripts/transfer.js for transferring NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
 # Run the transfer script to complete the batch transfer.

@@ -20,20 +20,19 @@ This project involves creating, deploying, and managing an ERC721A NFT collectio
    git clone <repository-url>
    cd <repository-directory>
 2. **Install Dependencies**
-
+ ```
 bash
 Copy code
 npm install
 Configure Environment Variables
-
-3. **Create a .env file in the root directory and add private key and Infura Project ID:**
-
+   ```
+4. **Create a .env file in the root directory and add private key and Infura Project ID:**
+   ```
 plaintext
 Copy code
 PRIVATE_KEY
 INFURA_PROJECT_ID
-Ensure .env is included in .gitignore to avoid sharing sensitive information.
-
+Ensure .env is included in .gitignore to avoid sharing sensitive information
 4. **Update Hardhat Configuration**
 
 Modify hardhat.config.js to include Infura Project ID.

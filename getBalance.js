@@ -1,18 +1,19 @@
 const hre = require("hardhat");
-const MetaNFT = require("../artifacts/contracts/MetaNFT.sol/MetaNFT.json");
-
-const tokenAddress = "0x13B0Edd9312886Ac0C73116e767208bEd1199679"; 
-const tokenABI = MetaNFT.abi;
-const walletAddress = "0xEbD04f411D295086497E4686b15D7c9d87ad434D"; 
 
 async function main() {
-    const contract = await hre.ethers.getContractAt(tokenABI, tokenAddress);
-    const balance = await contract.balanceOf(walletAddress);
+  // Address of the deployed MetaToken contract
+  const contractAddress = "0x7f3838051489595Aec7981fC13493752c99db792";
+  const nftContract = await hre.ethers.getContractAt("MetaToken", contractAddress);
 
-    console.log("Your NFT balance is:", balance.toString());
+  // Address of the wallet to check
+  const walletAddress = "0xEbD04f411D295086497E4686b15D7c9d87ad434D"; 
+
+  // Get the balance of the wallet
+  const balance = await nftContract.balanceOf(walletAddress);
+  console.log(`Wallet ${walletAddress} has ${balance} NFTs.`);
 }
 
 main().catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
+  console.error(error);
+  process.exitCode = 1;
 });

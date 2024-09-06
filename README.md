@@ -37,4 +37,4 @@ The MetaToken project is an advanced NFT solution that utilizes the ERC721A stan
    - Use the provided transfer script to approve and transfer your NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
 
 ### Authors
-*Arfan*
+# Arfan

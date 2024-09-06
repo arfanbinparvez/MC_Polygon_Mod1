@@ -11,7 +11,6 @@ contract MetaToken is ERC721A, Ownable {
 
     constructor() ERC721A("MetaToken", "MTA") {}
 
-    // Mint function for the owner to mint tokens with metadata
     function mintWithMetadata(
         address to, 
         uint256 amount, 
@@ -27,14 +26,11 @@ contract MetaToken is ERC721A, Ownable {
             _promptDescriptions[startTokenId + i] = descriptions[i];
         }
     }
-
-    // Function to get the IPFS URI for a specific token ID
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         require(_exists(tokenId), "Token does not exist");
         return _tokenURIs[tokenId];
     }
 
-    // Function to get the prompt description for a specific token ID
     function promptDescription(uint256 tokenId) public view returns (string memory) {
         require(_exists(tokenId), "Token does not exist");
         return _promptDescriptions[tokenId];

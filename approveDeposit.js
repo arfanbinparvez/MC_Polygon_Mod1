@@ -1,37 +1,31 @@
 const hre = require("hardhat");
 const fxRootContractABI = require("../fxRootContractABI.json");
-const MetaNFT = require("../artifacts/contracts/MetaNFT.sol/MetaNFT.json");
+const tokenContractJSON = require("../artifacts/contracts/MetaToken.sol/MetaToken.json");
 
-const tokenAddress = "0x4F735B40e72c138EaA2D3E38c6f4ce2117d774A1"; 
-const tokenABI = MetaNFT.abi;
-const fxERC20RootAddress = "0x13B0Edd9312886Ac0C73116e767208bEd1199679"; // FxPortal Root contract address on Sepolia
-const numberOfTokens = 5; // Number of NFTs to transfer
+const tokenAddress = "0x7f3838051489595Aec7981fC13493752c99db792"; 
+const tokenABI = tokenContractJSON.abi;
+const fxERC20RootAddress = "0x3658ccFDE5e9629b0805EB06AaCFc42416850961";
+const walletAddress = "0xEbD04f411D295086497E4686b15D7c9d87ad434D"; 
 
 async function main() {
-    const [deployer] = await hre.ethers.getSigners();
-    console.log("Deployer address:", deployer.address);
 
-    const contract = await hre.ethers.getContractAt(tokenABI, tokenAddress);
+    const tokenContract = await hre.ethers.getContractAt(tokenABI, tokenAddress);
     const fxContract = await hre.ethers.getContractAt(fxRootContractABI, fxERC20RootAddress);
 
-    for (let i = 0; i < numberOfTokens; i++) {
-        const tokenId = i + 1;
+    const approveTx = await tokenContract.approve(fxERC20RootAddress, 2);
+    await approveTx.wait();
 
-        // Approve the FxPortal contract to transfer the token
-        const approveTx = await contract.approve(fxERC20RootAddress, tokenId);
-        await approveTx.wait();
-        console.log(`Approved token ${tokenId} for transfer`);
+    console.log('Approval confirmed');
 
-        // Deposit the NFT into the FxPortal contract
-        const depositTx = await fxContract.deposit(tokenAddress, deployer.address, tokenId, "0x6556");
-        await depositTx.wait();
-        console.log(`Transferred token ${tokenId} to Polygon`);
-    }
 
-    console.log("Batch transfer complete");
-}
+    const depositTx = await fxContract.deposit(tokenAddress, walletAddress, 2, "0x6556");
+    await depositTx.wait();
 
-main().catch((error) => {
+    console.log("Tokens deposited");
+  
+  }
+
+  main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
-});
+  });

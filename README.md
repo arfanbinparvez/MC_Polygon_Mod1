@@ -1,12 +1,10 @@
-Sure! Here’s a README file tailored to your project, without code snippets or sensitive information:
-
 ---
 
-# MetaNFT Project
+# MetaToken Project
 
 ## Description
 
-The MetaNFT project is an advanced NFT solution that utilizes the ERC721A standard on both the Ethereum and Polygon networks. This project involves generating a 5-item NFT collection using DALLE 2 or Midjourney, storing the images and metadata on IPFS, deploying an ERC721A smart contract, and managing NFT transfers across different blockchain networks.
+The MetaToken project is an advanced NFT solution that utilizes the ERC721A standard on both the Ethereum and Polygon networks. This project involves generating a 5-item NFT collection using DALLE 2 or Midjourney, storing the images and metadata on IPFS, deploying an ERC721A smart contract, and managing NFT transfers across different blockchain networks.
 
 ## Getting Started
 
@@ -39,13 +37,6 @@ The MetaNFT project is an advanced NFT solution that utilizes the ERC721A standa
 
 5. **Bridge NFTs to Polygon**
    - Use the provided transfer script to approve and transfer your NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
-
-### Configuration
-
-- **MetaNFT Smart Contract**: Manages NFT creation and metadata.
-- **Deployment Script**: Deploys the MetaNFT contract to the Ethereum network.
-- **Minting Script**: Mints NFTs in batch.
-- **Transfer Script**: Bridges NFTs from Ethereum to Polygon.
 
 ### Authors
 *Arfan*

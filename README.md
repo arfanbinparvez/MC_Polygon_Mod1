@@ -29,8 +29,6 @@ The MetaToken project is an advanced NFT solution that utilizes the ERC721A stan
 
 3. **Deploy Smart Contract**
    - Use the provided deployment script to deploy the ERC721A contract to the Ethereum Sepolia Testnet.
-   - Set the base URI of the contract to point to the IPFS CID of your metadata folder.
-   - Add prompt descriptions for each NFT.
 
 4. **Mint NFTs**
    - Execute the batch minting script to mint all 5 NFTs.

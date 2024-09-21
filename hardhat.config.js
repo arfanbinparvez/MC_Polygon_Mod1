@@ -25,5 +25,9 @@ module.exports = {
       url: 'https://eth-sepolia.g.alchemy.com/v2/V3DkFVwHeJcsZR_qsk9-7iDDutcjYuSQ', 
       accounts: [process.env.PRIVATE_KEY],
     },
+    amoy: {
+      url: 'https://polygon-amoy.g.alchemy.com/v2/ZEEPmAA0UcTjo23d1VzpgQ89qk3e_peR', 
+      accounts: [process.env.PRIVATE_KEY],
+    },
   }
 };

@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   // Address of the deployed MetaToken contract
-  const contractAddress = "0x7f3838051489595Aec7981fC13493752c99db792";
+  const contractAddress = "0xdb7B94aeAEf9d4BcAA1b1A8ce2D4aA06982ae43b";
   const nftContract = await hre.ethers.getContractAt("MetaToken", contractAddress);
 
   const ipfsURIs = [

@@ -35,6 +35,8 @@ The MetaToken project is an advanced NFT solution that utilizes the ERC721A stan
 
 5. **Bridge NFTs to Polygon**
    - Use the provided transfer script to approve and transfer your NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
-
+5. **Check Balance**
+   - Use "npx hardhat run scripts/getBalance.js --network amoy" to check balance on Amoy network.
+     
 ### Authors
 Arfan
